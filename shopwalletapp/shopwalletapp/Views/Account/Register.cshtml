@@ -1,0 +1,79 @@
+﻿@model shopwalletapp.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ShopWallet</title>
+    <link rel="stylesheet" href="~/Content/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="~/Content/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/Block-Responsive-Item-List.css">
+    <link rel="stylesheet" href="~/Content/assets/css/Data-Table-1.css">
+    <link rel="stylesheet" href="~/Content/assets/css/Data-Table.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="~/Content/assets/css/Sidebar-Menu-1.css">
+    <link rel="stylesheet" href="~/Content/assets/css/Sidebar-Menu.css">
+</head>
+<body>
+    <div class="login-dark" style="background-image: url(&quot;/Content/assets/img/star-sky.jpg&quot;);">
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <h4>Register.</h4>
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+           
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
+                </div>
+            </div>
+            <div class="form-group">
+               
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                </div>
+            </div>
+            <div class="form-group">
+              
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" ,@placeholder= "Confirm Password" })
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary btn-block" value="Register" type="submit" />
+          
+            </div>
+        
+        }
+
+    </div>
+    <script src="~/Content/assets/js/jquery.min.js"></script>
+    <script src="~/Content/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="~/Content/assets/js/agency.js"></script>
+    <script src="~/Content/assets/js/Sidebar-Menu.js"></script>
+</body>
+</html>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
