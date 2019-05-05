@@ -15,9 +15,11 @@ namespace shopwalletapp.Models
         [Required]
         public int? EmployeeId { get; set; }
 
+        [Display(Name = "Payroll Date")]
         [DataType(DataType.Date)]
         public DateTime PayrollDate { get; set; }
 
+        [Display(Name = "Pay Amount")]
         public double PayAmount { get; set; }
 
         [ForeignKey("EmployeeId")]

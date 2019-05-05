@@ -22,6 +22,7 @@ namespace shopwalletapp.Models
 
         public double Hours { get; set; }
 
+        [Display(Name = "Hourly Rate")]
         public double HourlyRate { get; set; }
 
         [Required]
