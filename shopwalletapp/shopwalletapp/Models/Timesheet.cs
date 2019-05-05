@@ -12,9 +12,11 @@ namespace shopwalletapp.Models
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [Display(Name = "Employee")]
         [Required]
         public int? EmployeeId { get; set; }
 
+        [Display(Name = "Manager")]
         public int? ManagerId { get; set; }
 
         [DataType(DataType.Date)]
@@ -25,6 +27,7 @@ namespace shopwalletapp.Models
         [Display(Name = "Hourly Rate")]
         public double HourlyRate { get; set; }
 
+        [Display(Name = "Task Description")]
         [Required]
         public int? TaskDescId { get; set; }
 
