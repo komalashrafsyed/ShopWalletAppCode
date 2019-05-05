@@ -1,0 +1,58 @@
+﻿@model IEnumerable<shopwalletapp.Models.TaskDesc>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table id="table1" class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-info" })
+                                @Html.ActionLink("Detail", "Details", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-warning btn-sm" })
+                                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-danger btn-sm" })
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+
+
+
+        </table>
+
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#table1').DataTable();
+        });
+    </script>
+}

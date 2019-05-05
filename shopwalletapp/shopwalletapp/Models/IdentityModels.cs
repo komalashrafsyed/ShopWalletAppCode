@@ -27,6 +27,14 @@ namespace shopwalletapp.Models
 
         public System.Data.Entity.DbSet<ShopWalletApp.Models.Todo> Todoes { get; set; }
 
+        public DbSet<Employee> Employees { get; set; }
+
+        public DbSet<Timesheet> Timesheets { get; set; }
+
+        public DbSet<TaskDesc> TaskDescs { get; set; }
+
+        public DbSet<Payroll> Payrolls { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

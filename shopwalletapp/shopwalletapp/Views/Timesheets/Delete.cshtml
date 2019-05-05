@@ -1,0 +1,80 @@
+﻿@model shopwalletapp.Models.Timesheet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+          
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Employee.Email):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Employee.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Employee1.Email):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Employee1.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TaskDesc.Name):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TaskDesc.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Date):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Date)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Hours):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Hours)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HourlyRate):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HourlyRate)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

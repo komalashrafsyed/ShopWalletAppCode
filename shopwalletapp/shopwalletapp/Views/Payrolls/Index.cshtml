@@ -1,0 +1,65 @@
+﻿@model IEnumerable<shopwalletapp.Models.Payroll>
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+
+        <table id="table1" class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Employee.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PayrollDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PayAmount)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Employee.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PayrollDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PayAmount)
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a class="btn btn-primary">Pay</a>
+                               
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+
+        </table>
+
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#table1').DataTable();
+        });
+    </script>
+}
+

@@ -1,0 +1,73 @@
+﻿@model shopwalletapp.Models.Timesheet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+<div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-9">
+  
+        <div>
+            
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Employee.Email):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Employee.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Employee1.Email):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Employee1.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TaskDesc.Name):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TaskDesc.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Date):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Date)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Hours):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Hours)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HourlyRate):
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HourlyRate)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
+</div>
